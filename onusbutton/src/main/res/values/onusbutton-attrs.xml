@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- OnusButton -->
+    <declare-styleable name="OnusButton">
+        <attr name="loadingDrawable" format="reference"/>
+    </declare-styleable>
+
+</resources>
