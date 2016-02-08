@@ -11,25 +11,25 @@ import android.widget.FrameLayout;
 public class SlideLoadingDispatcher extends StateDispatcher {
 
     /**
-     * {@link LOADING_LOCATION_LEFT} makes the loading indicator appear from the right side of the button. The rest
+     * {#LOADING_LOCATION_START} makes the loading indicator appear from the right side of the button. The rest
      * of the content moves to the left.
      */
     public static final int LOADING_LOCATION_START = -1;
 
     /**
-     * {@link LOADING_LOCATION_TOP} makes the loading indicator appear from the top of the button. The rest of
+     * {#LOADING_LOCATION_TOP} makes the loading indicator appear from the top of the button. The rest of
      * the content moves below.
      */
     public static final int LOADING_LOCATION_TOP = -2;
 
     /**
-     * {@link LOADING_LOCATION_RIGHT} makes the loading indicator appear from the left side of the button. The rest
+     * {#LOADING_LOCATION_RIGHT} makes the loading indicator appear from the left side of the button. The rest
      * of the content moves to the right.
      */
     public static final int LOADING_LOCATION_END = -3;
 
     /**
-     * {@link LOADING_LOCATION_BOTTOM} makes the loading indicator appear from the top of the button. The rest of
+     * {#LOADING_LOCATION_BOTTOM} makes the loading indicator appear from the top of the button. The rest of
      * the content moves up.
      */
     public static final int LOADING_LOCATION_BOTTOM = -4;
@@ -89,12 +89,12 @@ public class SlideLoadingDispatcher extends StateDispatcher {
             break;
 
         case LOADING_LOCATION_START:
-            layoutParams.setMarginStart(loadingIndicatorMargin);
+            layoutParams.leftMargin = loadingIndicatorMargin;
             loadingIndicator.setTranslationX(-loadingIndicatorWidth - loadingIndicatorMargin);
             break;
 
         case LOADING_LOCATION_END:
-            layoutParams.setMarginEnd(loadingIndicatorMargin);
+            layoutParams.rightMargin = loadingIndicatorMargin;
             loadingIndicator.setTranslationX(loadingIndicatorWidth + loadingIndicatorMargin);
             break;
         }
