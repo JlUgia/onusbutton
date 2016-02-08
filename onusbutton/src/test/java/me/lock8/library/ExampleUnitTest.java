@@ -1,4 +1,4 @@
-package io.ugia.onusbutton;
+package me.lock8.onusbutton;
 
 import org.junit.Test;
 
