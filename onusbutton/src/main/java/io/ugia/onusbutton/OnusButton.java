@@ -20,6 +20,8 @@ import io.ugia.onusbutton.dispatcher.StateDispatcher;
  */
 public class OnusButton extends FrameLayout {
 
+    private static final int INVALID_VALUE = -1;
+
     private TextView labelPlaceholder;
     private ProgressBar progressBar;
 
@@ -57,16 +59,21 @@ public class OnusButton extends FrameLayout {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.OnusButton, defStyleAttr, 0);
         Drawable progressBarDrawable = typedArray.getDrawable(R.styleable.OnusButton_loadingDrawable);
+        int progressBarColor = typedArray.getColor(R.styleable.OnusButton_loadingDrawableColor, INVALID_VALUE);
 
         progressBar = new ProgressBar(context, null, android.R.attr.progressBarStyleSmallInverse);
 
         if (progressBarDrawable != null) {
+            if (progressBarColor != INVALID_VALUE) {
+                progressBarDrawable.setColorFilter(progressBarColor, PorterDuff.Mode.SRC_IN);
+            }
             progressBar.setIndeterminateDrawable(progressBarDrawable);
-        }
 
-        int defaultColor = getResources().getColor(android.R.color.white);
-        int progressBarColor = typedArray.getColor(R.styleable.OnusButton_loadingDrawableColor, defaultColor);
-        progressBar.getIndeterminateDrawable().setColorFilter(progressBarColor, PorterDuff.Mode.SRC_IN);
+        } else {
+            int defaultColor = getResources().getColor(android.R.color.white);
+            int color = progressBarColor != INVALID_VALUE ? progressBarColor : defaultColor;
+            progressBar.getIndeterminateDrawable().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        }
 
         progressBar.setIndeterminate(true);
         addView(progressBar, layoutParams);
