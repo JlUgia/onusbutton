@@ -33,7 +33,7 @@ public class OnusButton extends FrameLayout {
     }
 
     public OnusButton(Context context, AttributeSet attrs) {
-        this(context, attrs, -1);
+        this(context, attrs, android.R.attr.buttonStyle);
     }
 
     public OnusButton(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -57,7 +57,9 @@ public class OnusButton extends FrameLayout {
                 .WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER;
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.OnusButton, defStyleAttr, 0);
+        int defaultStyleAttr = defStyleAttr == INVALID_VALUE ? android.R.attr.progressBarStyleSmall : defStyleAttr;
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.OnusButton, defaultStyleAttr, 0);
+
         Drawable progressBarDrawable = typedArray.getDrawable(R.styleable.OnusButton_loadingDrawable);
         int progressBarColor = typedArray.getColor(R.styleable.OnusButton_loadingDrawableColor, INVALID_VALUE);
 
