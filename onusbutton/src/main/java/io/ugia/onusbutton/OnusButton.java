@@ -1,6 +1,7 @@
 package io.ugia.onusbutton;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -10,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import io.ugia.library.R;
 import io.ugia.onusbutton.dispatcher.BasicLoadingDispatcher;
 import io.ugia.onusbutton.dispatcher.StateDispatcher;
 
@@ -44,17 +46,28 @@ public class OnusButton extends FrameLayout {
         setPadding(0, 0, 0, 0);
 
         initializePlaceholderButton(context, attrs, defStyleAttr);
-        initializeProgressBar(context);
+        initializeProgressBar(context, attrs, defStyleAttr);
     }
 
-    private void initializeProgressBar(Context context) {
+    private void initializeProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
 
         LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams
                 .WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER;
 
-        progressBar = new ProgressBar(context, null, android.R.attr.progressBarStyleSmall);
-        progressBar.getIndeterminateDrawable().setColorFilter(0xFFFFFFFF, PorterDuff.Mode.SRC_IN);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.OnusButton, defStyleAttr, 0);
+        Drawable progressBarDrawable = typedArray.getDrawable(R.styleable.OnusButton_loadingDrawable);
+
+        progressBar = new ProgressBar(context, null, android.R.attr.progressBarStyleSmallInverse);
+
+        if (progressBarDrawable != null) {
+            progressBar.setIndeterminateDrawable(progressBarDrawable);
+        }
+
+        int defaultColor = getResources().getColor(android.R.color.white);
+        int progressBarColor = typedArray.getColor(R.styleable.OnusButton_loadingDrawableColor, defaultColor);
+        progressBar.getIndeterminateDrawable().setColorFilter(progressBarColor, PorterDuff.Mode.SRC_IN);
+
         progressBar.setIndeterminate(true);
         addView(progressBar, layoutParams);
     }
@@ -78,7 +91,7 @@ public class OnusButton extends FrameLayout {
         labelPlaceholder.setBackground(null);
         labelPlaceholder.setClickable(false);
 
-        // Null margins on placeholder to avoid inheriting from parent. Margins are applied to contaienr
+        // Null margins on placeholder to avoid inheriting from parent. Margins are applied to container
         LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         layoutParams.setMargins(0, 0, 0, 0);
 
