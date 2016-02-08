@@ -7,9 +7,9 @@
         android:background="@android:color/white"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context="io.ugia.onusbutton.MainActivity">
+        tools:context=".MainActivity">
 
-    <io.ugia.onusbutton.OnusButton
+        <me.lock8.onusbutton.OnusButton
             android:id="@+id/am_basicButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:text="Hit Me!"
             android:onClick="buttonClicked"/>
 
-        <io.ugia.onusbutton.OnusButton
+        <me.lock8.onusbutton.OnusButton
                 android:id="@+id/am_slideButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
                 android:text="Hit Me and See Me Slide!"
                 android:onClick="buttonClicked"/>
 
-        <io.ugia.onusbutton.OnusButton
+        <me.lock8.onusbutton.OnusButton
                 android:id="@+id/am_slideLeftButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

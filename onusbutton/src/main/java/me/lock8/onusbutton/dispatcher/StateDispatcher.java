@@ -21,7 +21,7 @@
  * limitations under the License.
  */
 
-package io.ugia.onusbutton.dispatcher;
+package me.lock8.onusbutton.dispatcher;
 
 import android.view.View;
 

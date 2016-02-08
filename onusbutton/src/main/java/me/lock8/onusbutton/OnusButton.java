@@ -1,4 +1,4 @@
-package io.ugia.onusbutton;
+package me.lock8.onusbutton;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,9 +11,9 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import io.ugia.library.R;
-import io.ugia.onusbutton.dispatcher.BasicLoadingDispatcher;
-import io.ugia.onusbutton.dispatcher.StateDispatcher;
+import me.lock8.library.R;
+import me.lock8.onusbutton.dispatcher.BasicLoadingDispatcher;
+import me.lock8.onusbutton.dispatcher.StateDispatcher;
 
 /**
  * Created by joseluisugia on 01/04/15.
