@@ -61,14 +61,14 @@ public class OnusButton extends FrameLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.OnusButton, defaultStyleAttr, 0);
 
         Drawable progressBarDrawable = typedArray.getDrawable(R.styleable.OnusButton_loadingDrawable);
-        int progressBarColor = typedArray.getColor(R.styleable.OnusButton_loadingDrawableColor, INVALID_VALUE);
+
+        int defaultProgressBarColor = labelPlaceholder.getCurrentTextColor();
+        int progressBarColor = typedArray.getColor(R.styleable.OnusButton_loadingDrawableColor, defaultProgressBarColor);
 
         progressBar = new ProgressBar(context, null, android.R.attr.progressBarStyleSmallInverse);
 
         if (progressBarDrawable != null) {
-            if (progressBarColor != INVALID_VALUE) {
-                progressBarDrawable.setColorFilter(progressBarColor, PorterDuff.Mode.SRC_IN);
-            }
+            progressBarDrawable.setColorFilter(progressBarColor, PorterDuff.Mode.SRC_IN);
             progressBar.setIndeterminateDrawable(progressBarDrawable);
 
         } else {
