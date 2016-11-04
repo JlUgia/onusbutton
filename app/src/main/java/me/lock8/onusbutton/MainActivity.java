@@ -1,10 +1,10 @@
-package me.lock8.onusbutton;
+package one.noa.onusbutton;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import me.lock8.onusbutton.dispatcher.SlideLoadingDispatcher;
+import one.noa.onusbutton.dispatcher.SlideLoadingDispatcher;
 
 public class MainActivity extends AppCompatActivity {
 

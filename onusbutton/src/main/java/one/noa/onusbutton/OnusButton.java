@@ -1,4 +1,4 @@
-package me.lock8.onusbutton;
+package one.noa.onusbutton;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,9 +11,9 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import me.lock8.library.R;
-import me.lock8.onusbutton.dispatcher.BasicLoadingDispatcher;
-import me.lock8.onusbutton.dispatcher.StateDispatcher;
+import one.noa.library.R;
+import one.noa.onusbutton.dispatcher.BasicLoadingDispatcher;
+import one.noa.onusbutton.dispatcher.StateDispatcher;
 
 /**
  * Created by joseluisugia on 01/04/15.
