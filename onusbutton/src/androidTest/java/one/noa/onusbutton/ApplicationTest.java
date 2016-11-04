@@ -1,4 +1,4 @@
-package one.noatech.onusbutton;
+package one.noa.onusbutton;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

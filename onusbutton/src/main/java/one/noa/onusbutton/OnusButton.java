@@ -1,4 +1,4 @@
-package one.noatech.onusbutton;
+package one.noa.onusbutton;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,9 +11,9 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import one.noatech.library.R;
-import one.noatech.onusbutton.dispatcher.BasicLoadingDispatcher;
-import one.noatech.onusbutton.dispatcher.StateDispatcher;
+import one.noa.library.R;
+import one.noa.onusbutton.dispatcher.BasicLoadingDispatcher;
+import one.noa.onusbutton.dispatcher.StateDispatcher;
 
 /**
  * Created by joseluisugia on 01/04/15.

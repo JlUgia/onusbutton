@@ -1,4 +1,4 @@
-package one.noatech.onusbutton;
+package one.noa.onusbutton;
 
 import org.junit.Test;
 

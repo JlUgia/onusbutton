@@ -1,4 +1,4 @@
-package one.noatech.onusbutton.dispatcher;
+package one.noa.onusbutton.dispatcher;
 
 import android.view.Gravity;
 import android.view.View;
