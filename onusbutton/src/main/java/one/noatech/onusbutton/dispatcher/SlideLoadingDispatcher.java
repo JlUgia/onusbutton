@@ -1,4 +1,4 @@
-package me.lock8.onusbutton.dispatcher;
+package one.noatech.onusbutton.dispatcher;
 
 import android.view.Gravity;
 import android.view.View;

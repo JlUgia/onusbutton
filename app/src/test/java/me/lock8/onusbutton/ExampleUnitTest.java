@@ -1,4 +1,4 @@
-package me.lock8.onusbutton;
+package one.noatech.onusbutton;
 
 import org.junit.Test;
 
