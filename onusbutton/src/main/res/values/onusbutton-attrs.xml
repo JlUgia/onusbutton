@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- OnusButton -->
-    <declare-styleable name="OnusButton">
-        <attr name="loadingDrawableColor" format="color"/>
-        <attr name="loadingDrawable" format="reference"/>
-    </declare-styleable>
+  <!-- OnusButton -->
+  <declare-styleable name="OnusButton">
+    <attr name="loadingDrawableColor" format="color"/>
+    <attr name="loadingDrawable" format="reference"/>
+    <attr name="drawableLeftCompat" format="reference"/>
+    <attr name="drawableRightCompat" format="reference"/>
+    <attr name="drawableTopCompat" format="reference"/>
+    <attr name="drawableBottomCompat" format="reference"/>
+  </declare-styleable>
 
 </resources>
