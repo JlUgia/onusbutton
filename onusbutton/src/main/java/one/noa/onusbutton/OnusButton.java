@@ -36,7 +36,6 @@ public class OnusButton extends FrameLayout {
 
     public OnusButton(Context context, AttributeSet attrs) {
         this(context, attrs, android.R.attr.buttonStyle);
-        initAttrs(context, attrs);
     }
 
     public OnusButton(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -119,6 +118,7 @@ public class OnusButton extends FrameLayout {
             Drawable drawableRight = null;
             Drawable drawableBottom = null;
             Drawable drawableTop = null;
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 drawableLeft = attributeArray.getDrawable(R.styleable.OnusButton_drawableLeftCompat);
                 drawableRight = attributeArray.getDrawable(R.styleable.OnusButton_drawableRightCompat);
@@ -139,6 +139,7 @@ public class OnusButton extends FrameLayout {
                 if (drawableTopId != -1)
                     drawableTop = AppCompatResources.getDrawable(context, drawableTopId);
             }
+
             setCompoundDrawablesWithIntrinsicBounds(drawableLeft, drawableTop, drawableRight, drawableBottom);
             attributeArray.recycle();
         }
