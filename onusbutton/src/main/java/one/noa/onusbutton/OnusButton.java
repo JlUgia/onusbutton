@@ -82,6 +82,7 @@ public class OnusButton extends FrameLayout {
 
         progressBar.setIndeterminate(true);
         addView(progressBar, layoutParams);
+        typedArray.recycle();
     }
 
     private void adjustProgressBarOnSizeChanged(int w, int h, int oldw, int oldh) {
