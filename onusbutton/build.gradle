@@ -16,6 +16,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildTypes {
+
+        debug {
+        }
+
+        nightly {
+        }
+
+        beta {
+        }
+
+        release {
+        }
+    }
 }
 
 dependencies {
