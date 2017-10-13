@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply from: rootProject.ext.buildTypesPath
 
 android {
     compileSdkVersion 25
@@ -14,21 +15,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    buildTypes {
-
-        debug {
-        }
-
-        nightly {
-        }
-
-        beta {
-        }
-
-        release {
         }
     }
 }
