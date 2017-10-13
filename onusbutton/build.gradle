@@ -1,12 +1,13 @@
 apply plugin: 'com.android.library'
+apply from: rootProject.ext.buildTypesPath
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -16,24 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    buildTypes {
-
-        debug {
-        }
-
-        nightly {
-        }
-
-        beta {
-        }
-
-        release {
-        }
-    }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.4.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
     testCompile 'junit:junit:4.12'
 }
